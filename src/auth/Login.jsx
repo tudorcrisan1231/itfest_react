@@ -4,11 +4,11 @@ function Login() {
 
   return (
     <>
-        <section className="bg-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+        <section className="bg-white h-screen">
+            <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
                 <div className="relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 bg-gray-50 sm:px-6 lg:px-8">
                     <div className="absolute inset-0">
-                        <img className="object-cover object-top w-full h-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/signin/4/girl-thinking.jpg" alt="" />
+                        <img className="object-cover object-top w-full h-full" src="https://cdn.pixabay.com/photo/2021/11/19/08/20/strawberries-6808367_1280.jpg" alt="" />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
 
