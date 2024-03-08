@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const baseHttpURL = `http://127.0.0.1:5000`;
+export const baseHttpURL = `https://4a73-109-100-14-206.ngrok-free.app`;
 const timeout = 30000e3
 
 
