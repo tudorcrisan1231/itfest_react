@@ -1,34 +1,13 @@
 import axios from 'axios';
 
-export const host = process.env.REACT_APP_SV_ADR;
-export const baseHttpURL = `http://${host}/api`;
-export const baseURLPref = `${baseHttpURL}`;
-const timeout = 30000e3;
+export const baseHttpURL = `http://127.0.0.1:5000`;
+const timeout = 30000e3
+
 
 export const axiosInstanceToAPI = axios.create({
-  baseURL: baseURLPref,
-  timeout,
-});
-
-export const axiosAuthInstanceToAPI = axios.create({
-  baseURL: baseURLPref,
+  baseURL: baseHttpURL,
   timeout,
   headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
-    'Access-Control-Allow-Headers':
-      'Content-Type, Authorization, X-Requested-With',
-    Authorization: localStorage.getItem('jwt'),
+    'Content-Type': 'application/json',
   },
 });
-axiosInstanceToAPI.interceptors.request.use(
-  (config) => {
-    const token = `${localStorage.getItem('jwt')}`;
-    config.headers['Authorization'] = `${token}`;
-
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
