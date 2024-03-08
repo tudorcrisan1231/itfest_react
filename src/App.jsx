@@ -5,7 +5,8 @@ import Login from './auth/Login'
 import Register from './auth/Register'
 //import Home.jsx from components folder
 import Home from './components/home'
-
+import Profile from './components/Profile'
+import FoodPage from './components/FoodPage'
 //import app.css
 import './index.css'
 
@@ -17,6 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/food" element={<FoodPage />} />
       </Routes>
     </Router>
     </>
