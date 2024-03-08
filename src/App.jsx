@@ -9,6 +9,8 @@ import Feed from './components/Feed'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 
+import Profile from './components/Profile'
+import FoodPage from './components/FoodPage'
 //import app.css
 import './index.css'
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/" element={<Feed />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/food" element={<FoodPage />} />
       </Routes>
     </Router>
 
