@@ -14,8 +14,10 @@ import FoodPage from './components/FoodPage'
 import AddFood from './components/AddFood'
 //import app.css
 import './index.css'
+import { useEffect, useState } from 'react'
 
 function App() {
+  
   return (
     <>
     <Nav />

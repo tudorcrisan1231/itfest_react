@@ -6,6 +6,19 @@ import logo from "../assets/logo.png";
 function Nav() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
+  function checkAuth() {
+    if (localStorage.getItem("auth-token")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function logout() {
+    localStorage.removeItem("auth-token");
+    window.location = "/login";
+  }
+
   const setMenuToTrue = () => {
     setIsMenuVisible(true);
   };
@@ -53,13 +66,29 @@ function Nav() {
                   >
                     Add product
                   </a>
-                  <a
-                    href="/"
-                    title=""
-                    class="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"
-                  >
-                    Logout
-                  </a>
+                 
+                    {
+                        checkAuth() && (
+                            <div
+                                onClick={() => { logout() }}
+                                className="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"
+                            >
+                                Logout
+                            </div>
+                        )
+                    }
+
+                    {
+                        !checkAuth() && (
+                            <a
+                                href="/login"
+                                title=""
+                                className="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"
+                            >
+                                Login
+                            </a>
+                        )
+                    }
                 </div>
 
                 <button
