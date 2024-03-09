@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect, Component } from "react";
 import { Link } from "react-router-dom";
-//import logo.png from assets
 import logo from "../assets/logo.png";
 
-function Nav() {
+
+function Nav({ logout }) {
+  // const navigate = useNavigate();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   function checkAuth() {
@@ -12,11 +13,6 @@ function Nav() {
     } else {
       return false;
     }
-  }
-
-  function logout() {
-    localStorage.removeItem("auth-token");
-    window.location = "/login";
   }
 
   const setMenuToTrue = () => {
@@ -66,29 +62,27 @@ function Nav() {
                   >
                     Add product
                   </a>
-                 
-                    {
-                        checkAuth() && (
-                            <div
-                                onClick={() => { logout() }}
-                                className="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"
-                            >
-                                Logout
-                            </div>
-                        )
-                    }
 
-                    {
-                        !checkAuth() && (
-                            <a
-                                href="/login"
-                                title=""
-                                className="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"
-                            >
-                                Login
-                            </a>
-                        )
-                    }
+                  {checkAuth() && (
+                    <div
+                      onClick={() => {
+                        logout();
+                      }}
+                      className="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"
+                    >
+                      Logout
+                    </div>
+                  )}
+
+                  {!checkAuth() && (
+                    <a
+                      href="/login"
+                      title=""
+                      className="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"
+                    >
+                      Login
+                    </a>
+                  )}
                 </div>
 
                 <button
