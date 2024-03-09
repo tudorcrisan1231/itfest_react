@@ -58,7 +58,7 @@ function FeatureProduct() {
                 <div className="grid grid-cols-1 px-6 mt-12 sm:mt-16 gap-x-6 gap-y-8 sm:px-0 sm:grid-cols-2 lg:grid-cols-4">
                     {products.map((product) => {
                         return (
-                            <div className="space-y-4 group">
+                            <div className="space-y-4 group" key={product.id || index}>
                                 <a href={`/food/${product.name}`} title="" className="block overflow-hidden rounded-lg aspect-w-1 aspect-h-1">
                                     <img className="object-cover w-full h-72 transition-all duration-200 transform group-hover:scale-110" src={product.image} alt="" />
                                 </a>

@@ -8,7 +8,10 @@ function Feed() {
       <>    
         <Search />
         <Categories />
-        <FeatureProduct />
+        <div id='feature'>
+          <FeatureProduct />
+        </div>
+        
       </>
     )
 }
