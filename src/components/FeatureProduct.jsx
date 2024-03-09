@@ -21,7 +21,7 @@ function FeatureProduct() {
             return "b"
         }
         if(score == 3) {
-            return "cC"
+            return "c"
         }
         if(score == 4) {
             return "e"

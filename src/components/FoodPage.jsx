@@ -43,6 +43,16 @@ function FoodPage() {
         }
     }
 
+    function handleAddProduct() {
+        axiosAuthInstanceToAPI.post('/fav/', {
+            prodId: data.id,
+        }).then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
 
     if (loading === true)
         return (
@@ -251,11 +261,11 @@ function FoodPage() {
                                             </button>
                                         </div>
                                         <div className="flex items-center justify-between mt-4 space-x-4">
-                                            <button
+                                            <button onClick={ handleAddProduct}
                                                 type="button"
                                                 className="inline-flex items-center justify-center w-full px-4 py-3 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-orange-500 rounded-lg hover:bg-orange-600"
                                             >
-                                                Add to favorites
+                                                Add to favourites
                                             </button>
                                         </div>
                                     </div>
