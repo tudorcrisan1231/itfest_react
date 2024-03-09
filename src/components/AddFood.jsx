@@ -40,6 +40,13 @@ function AddFood() {
         })
         .then((res) => {
             console.log(res);
+
+            if(res.status === 201) {
+                //return to home page
+                window.location.href = "/";
+            } else {
+                alert("error");
+            }
         })
         .catch((err) => {
             console.error(err);
