@@ -31,6 +31,8 @@ const MyFoodFavourite = ({ data }) => {
       });
       if (response.status === 200) {
         alert("Produs sters cu succes!");
+      } else {
+        navigate("/feed");
       }
     } catch (err) {
       console.log(err);
@@ -43,7 +45,7 @@ const MyFoodFavourite = ({ data }) => {
         <div className="p-4">
           <div className="mt-4 overflow-hidden rounded-lg aspect-w-1 aspect-h-1">
             <img
-              className="object-cover w-full h-full"
+              className="object-cover w-auto h-auto"
               src={data.image}
               alt=""
             />
@@ -64,13 +66,15 @@ const MyFoodFavourite = ({ data }) => {
               />
             </div>
           </div>
-          <button
-            onClick={handleRemove(data.id)}
-            type="button"
-            className="inline-flex items-center justify-center w-full px-4 py-3 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-red-600 rounded-lg hover:bg-orange-600"
-          >
-            Remove from favourites
-          </button>
+          <div>
+            <button
+              onClick={() => handleRemove(data.id)}
+              type="button"
+              className="inline-flex items-center justify-center w-full px-4 py-3 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-red-600 rounded-lg hover:bg-orange-600"
+            >
+              Remove from favourites
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -32,7 +32,7 @@ function Home() {
             </p>
           </div>
 
-          <div>
+          <div className="flex">
             {data &&
               data.map((product, index) => {
                 return (

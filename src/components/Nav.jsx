@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect, Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
-
 function Nav({ logout }) {
   // const navigate = useNavigate();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -51,6 +50,7 @@ function Nav({ logout }) {
                 <a href="/" title="" class="flex">
                   <img class="w-auto h-10" src={logo} alt="" />
                 </a>
+                <h1 className="font-bold">FITTAPP</h1>
               </div>
 
               <div class="flex items-center justify-end ml-auto space-x-6">
