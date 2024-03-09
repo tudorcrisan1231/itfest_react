@@ -1,6 +1,19 @@
 import React, { Component } from 'react'
+import { axiosAuthInstanceToAPI } from "../Utils/networking.util";
+import { useEffect, useState } from 'react';
 
 function FeatureProduct() {
+    function getProducts() {
+        axiosAuthInstanceToAPI.get('/products/').then((response) => {
+            console.log(response.data)
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+    //on page load
+    useEffect(() => {
+        getProducts()
+    }, [])
     return (
       <>
           <section className="py-12 bg-white sm:py-16 lg:py-20">
