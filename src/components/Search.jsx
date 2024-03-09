@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
+import { useState } from 'react'
+import { axiosAuthInstanceToAPI } from '../Utils/networking.util'
 
 function Search() {
+    const [search, setSearch] = useState('')
+
+    function searchFood() {
+        window.location.href = `/food/${search}`;
+    }
     return (
       <>
         <section class="py-10 bg-gray-100 sm:py-16 lg:py-24">
@@ -14,28 +21,32 @@ function Search() {
                 </p>
             </div>
 
-            <form action="#" method="POST" class="max-w-xl mx-auto mt-12">
+            <div class="max-w-xl mx-auto mt-12">
                 <div class="flex flex-col items-center sm:flex-row sm:justify-center">
                     <div class="flex-1 w-full min-w-0 px-4 sm:px-0">
                         <label for="email" class="sr-only"></label>
                         <input
-                            type="email"
-                            name="email"
-                            id="email"
+                            type="text"
+                            name="text"
+                            id="text"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
                             placeholder="Search for food..."
                             class="block w-full px-4 py-4 text-base text-black placeholder-gray-500 transition-all duration-200 border-transparent rounded-md caret-indigo-600 focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
                             required
                         />
                     </div>
 
-                    <button type="submit" class="inline-flex items-center justify-center w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200 bg-indigo-600 border border-transparent rounded-md sm:ml-4 sm:mt-0 sm:w-auto hover:bg-indigo-700 focus:bg-indigo-700">
+                    <button
+                    onClick={() => searchFood()}
+                    type="submit" class="inline-flex items-center justify-center w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200 bg-indigo-600 border border-transparent rounded-md sm:ml-4 sm:mt-0 sm:w-auto hover:bg-indigo-700 focus:bg-indigo-700">
                         Search
                         <svg class="w-5 h-5 ml-3 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                     </button>
                 </div>
-            </form>
+            </div>
         </div>
         </section>
       </>
