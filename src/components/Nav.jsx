@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 //import logo.png from assets
 import logo from '../assets/logo.png'
 
@@ -10,31 +11,15 @@ function Nav() {
                 <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                     <div class="flex justify-between h-16 lg:h-[72px]">
                         <div class="flex items-center flex-shrink-0 -m-1">
-                            <a href="#" title="" class="flex">
+                            <a href="/" title="" class="flex">
                                 <img class="w-auto h-16" src={logo} alt="" />
                             </a>
                         </div>
 
                         <div class="hidden lg:flex lg:justify-start lg:ml-16 lg:space-x-8 xl:space-x-14">
-                            <a href="#" title="" class="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900">
-                                <svg class="w-4 h-4 mr-1.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                                    ></path>
-                                </svg>
-                                Food
-                            </a>
-
-                            <a href="#" title="" class="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"> 
+                            <a href="/add-food" title="" class="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"> 
                                 Contribute
                              </a>
-
-                            <a href="#" title="" class="inline-flex items-center font-sans text-sm font-medium text-gray-900 transition-all duration-200 border-b-2 border-transparent xl:text-base hover:border-gray-900 focus:outline-none focus:border-gray-900"> 
-                                Help
-                            </a>
                         </div>
 
                         <div class="flex items-center justify-end ml-auto space-x-6">
