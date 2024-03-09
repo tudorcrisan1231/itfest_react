@@ -14,7 +14,7 @@ function FeatureProduct() {
     }
 
     function health_score(score) {
-        if(score == 1) {
+        if(score == 1 || score == 0) {
             return "a"
         }
         if(score == 2) {
