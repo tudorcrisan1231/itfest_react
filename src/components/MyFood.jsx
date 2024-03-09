@@ -12,6 +12,7 @@ function Home() {
 
                     <div className="grid grid-cols-2 gap-4 px-12 mt-12 text-center sm:mt-16 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 sm:gap-6 xl:gap-8 md:px-0">
 
+                        <a href="/food">
                         <div className="hover:scale-105 duration-300 after:transition after:ease-[ease] after:duration-300 max-w-xs mx-auto overflow-hidden bg-white  rounded-lg shadow-lg ">
                             <div className="p-4">
 
@@ -29,6 +30,7 @@ function Home() {
 
                             </div>
                         </div>
+                        </a>
 
                         <div className="hover:scale-105 duration-300 after:transition after:ease-[ease] after:duration-300 max-w-xs mx-auto overflow-hidden bg-white  rounded-lg shadow-lg ">
                             <div className="p-4">

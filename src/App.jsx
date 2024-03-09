@@ -8,7 +8,7 @@ import Home from './components/home'
 import Feed from './components/Feed'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
-
+import MyFood from './components/MyFood'
 import Profile from './components/Profile'
 import FoodPage from './components/FoodPage'
 import AddFood from './components/AddFood'
@@ -28,6 +28,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/food" element={<FoodPage />} />
         <Route path="/add-food" element={<AddFood />} />
+        <Route path="/my-food" element={<MyFood />} />
       </Routes>
     </Router>
 
