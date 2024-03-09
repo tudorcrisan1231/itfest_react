@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { axiosAuthInstanceToAPI } from "../Utils/networking.util";
-import useParams from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function FoodPage() {
   const [data, setData] = useState(null);
