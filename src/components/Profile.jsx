@@ -42,9 +42,9 @@ function Profile() {
                         <div className="max-w-4xl mx-auto">
                             <div className="border-b border-gray-200">
                                 <nav className="flex -mb-px space-x-8" aria-label="Tabs">
-                                    <button  onClick={() => setProfilePage('details') } className={` ${profilePage === 'details' ? 'border-gray-900' : 'border-transparent'} px-0 py-4 text-xs font-bold tracking-wide text-gray-400 uppercase border-b-2 sm:px-5 whitespace-nowrap`}> Details</button>
-                                    <button onClick={() => setProfilePage('allergens')} className={` ${profilePage === 'allergens' ? 'border-gray-900' : 'border-transparent'} px-0 py-4 text-xs font-bold tracking-wide text-gray-400 uppercase border-b-2 border-transparent sm:px-5 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap`}> Allergens </button>
-                                    <button onClick={() => setProfilePage('foodHistory')} className={` ${profilePage === 'foodHistory' ? 'border-gray-900' : 'border-transparent'} px-0 py-4 text-xs font-bold tracking-wide text-gray-400 uppercase border-b-2 border-transparent sm:px-5 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap`}> Food History </button>
+                                    <button onClick={() => setProfilePage('details') } className={` ${profilePage === 'details' ? 'border-gray-900' : 'border-transparent'} px-0 py-4 text-xs font-bold tracking-wide text-gray-400  hover:text-gray-700 hover:border-gray-300 uppercase border-b-2 sm:px-5 whitespace-nowrap`}> Details</button>
+                                    <button onClick={() => setProfilePage('allergens') } className={` ${profilePage === 'allergens' ? 'border-gray-900' : 'border-transparent'} px-0 py-4 text-xs font-bold tracking-wide text-gray-400 uppercase border-b-2 sm:px-5 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap`}> Allergens </button>
+                                    <button onClick={() => setProfilePage('foodHistory')} className={` ${profilePage === 'foodHistory' ? 'border-gray-900' : 'border-transparent'} px-0 py-4 text-xs font-bold tracking-wide text-gray-400 uppercase border-b-2 sm:px-5 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap`}> Food History </button>
                                 </nav>
                             </div>
 

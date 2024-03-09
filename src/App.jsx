@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 
 import Profile from './components/Profile'
 import FoodPage from './components/FoodPage'
+import AddFood from './components/AddFood'
 //import app.css
 import './index.css'
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/food" element={<FoodPage />} />
+        <Route path="/add-food" element={<AddFood />} />
       </Routes>
     </Router>
 

@@ -45,7 +45,7 @@ function FoodPage() {
                                     <div class="flex items-center justify-between mt-4 space-x-4">
                                         <button
                                             type="button"
-                                            class="inline-flex items-center justify-center w-full px-4 py-3 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-green-400 rounded-lg hover:bg-green-500"
+                                            class="inline-flex items-center justify-center w-full px-4 py-3 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-green-500 rounded-lg hover:bg-green-600"
                                         >
                                             Like
                                         </button>
@@ -57,6 +57,51 @@ function FoodPage() {
                                             Dislike
                                         </button>
                                     </div>
+                                    <div class="flex items-center justify-between mt-4 space-x-4">
+                                        <button type="button" class="inline-flex items-center justify-center w-full px-4 py-3 text-xs font-bold tracking-widest text-white uppercase transition-all duration-200 bg-orange-500 rounded-lg hover:bg-orange-600">
+                                            Add to favorites
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="mt-10 max-w-xs mx-auto overflow-hidden bg-white  rounded-lg shadow-lg">
+                                <p class="m-5 mb-0 flex text-base font-bold text-gray-900">Nutrients:</p>
+                                <div class="p-5">
+                                    <table class="w-full text-gray-700">
+                                        <tr className='border-b border-gray-300'>
+                                            <td>Proteins</td>
+                                            <td>0.3g</td>
+                                        </tr>
+                                        <tr className='border-b border-gray-300'>
+                                            <td>Fat</td>
+                                            <td>0.3g</td>
+                                        </tr>
+                                        <tr className='border-b border-gray-300'>
+                                            <td>Carbohydrates</td>
+                                            <td>22.8g</td>
+                                        </tr>
+                                        <tr className='border-b border-gray-300'>
+                                            <td>Sugar</td>
+                                            <td>12.2g</td>
+                                        </tr>
+                                        <tr className='border-b border-gray-300'>
+                                            <td>Fiber</td>
+                                            <td>2.6g</td>
+                                        </tr>
+                                        <tr className='border-b border-gray-300'>
+                                            <td>Calories</td>
+                                            <td>89</td>
+                                        </tr>
+                                        <tr className='border-b border-gray-300'>
+                                            <td>Cholesterol</td>
+                                            <td>0mg</td>
+                                        </tr>
+                                        <tr className='border-b border-gray-300'>
+                                            <td>Sodium</td>
+                                            <td>1mg</td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                         </div>
