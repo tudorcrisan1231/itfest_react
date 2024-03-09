@@ -17,55 +17,52 @@ function AddFood() {
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(false);
 
-  function handleSubmit() {
-    if (
-      name === "" ||
-      description === "" ||
-      image === "" ||
-      energy_100g === "" ||
-      proteins_100g === "" ||
-      carbohydrates_100g === "" ||
-      sugars_100g === "" ||
-      fat_100g === "" ||
-      saturated_fat_100g === "" ||
-      fiber_100g === "" ||
-      salt_100g === "" ||
-      category === ""
-    ) {
-      alert("Please fill all the fields");
-      return;
-    }
-    setLoading(true);
-    axiosAuthInstanceToAPI
-      .post("/product/", {
-        name: name,
-        description: description,
-        image: image,
-        energy_100g: energy_100g,
-        proteins_100g: proteins_100g,
-        carbohydrates_100g: carbohydrates_100g,
-        sugars_100g: sugars_100g,
-        fat_100g: fat_100g,
-        saturated_fat_100g: saturated_fat_100g,
-        fiber_100g: fiber_100g,
-        salt_100g: salt_100g,
-        category: category,
-      })
-      .then((res) => {
-        console.log(res);
-
-        if (res.status === 201) {
+  async function handleSubmit() {
+    try {
+      if (
+        name === "" ||
+        description === "" ||
+        image === "" ||
+        energy_100g === "" ||
+        proteins_100g === "" ||
+        carbohydrates_100g === "" ||
+        sugars_100g === "" ||
+        fat_100g === "" ||
+        saturated_fat_100g === "" ||
+        fiber_100g === "" ||
+        salt_100g === "" ||
+        category === ""
+      ) {
+        alert("Please fill all the fields");
+        return;
+      } else {
+        setLoading(true);
+        const response = await axiosAuthInstanceToAPI.post("/product/", {
+          name: name,
+          description: description,
+          image: image,
+          energy_100g: energy_100g,
+          proteins_100g: proteins_100g,
+          carbohydrates_100g: carbohydrates_100g,
+          sugars_100g: sugars_100g,
+          fat_100g: fat_100g,
+          saturated_fat_100g: saturated_fat_100g,
+          fiber_100g: fiber_100g,
+          salt_100g: salt_100g,
+          category: category,
+        });
+        setLoading(false);
+        if (response.status === 201) {
           //return to home page
           window.location.href = "/";
         } else {
           alert("error");
         }
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("error");
-      });
-    setLoading(false);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("error");
+    }
   }
 
   if (loading === true)
