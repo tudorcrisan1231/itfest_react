@@ -16,8 +16,7 @@ export const axiosAuthInstanceToAPI = axios.create({
   baseURL: baseHttpURL,
   timeout,
   headers: {
-    'Authorization': `Bearer ${localStorage.getItem('auth-token')}`,
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
+    Authorization: `Bearer ${JSON.parse(localStorage.getItem('auth-token'))}`,
   },
 });
