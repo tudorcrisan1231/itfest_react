@@ -36,6 +36,7 @@ function AddFood() {
     setSalt_100g(selectedProduct.salt_100g);
     setSaturated_fat_100g(selectedProduct.saturated_fat_100g);
     setFiber_100g(selectedProduct.fiber_100g);
+    setImage(selectedProduct.image);
   };
 
   const handleChange = (selectedOption) => {
@@ -65,6 +66,7 @@ function AddFood() {
             energy_100g: item.nutriments.energy_100g,
             proteins_100g: item.nutriments.proteins_100g,
             carbohydrates_100g: item.nutriments.carbohydrates_100g,
+            image: item.image_front_small_url,
             sugars_100g: item.nutriments.sugars_100g,
             fat_100g: item.nutriments.fat_100g,
             saturated_fat_100g: item.nutriments["saturated-fat_100g"],
@@ -122,45 +124,44 @@ function AddFood() {
 
   async function handleSubmit() {
     try {
-      if (
-        name === "" ||
-        description === "" ||
-        image === "" ||
-        energy_100g === "" ||
-        proteins_100g === "" ||
-        carbohydrates_100g === "" ||
-        sugars_100g === "" ||
-        fat_100g === "" ||
-        saturated_fat_100g === "" ||
-        fiber_100g === "" ||
-        salt_100g === "" ||
-        category === ""
-      ) {
-        alert("Please fill all the fields");
-        return;
+      // if (
+      //   name === "" ||
+      //   description === "" ||
+      //   image === "" ||
+      //   energy_100g === "" ||
+      //   proteins_100g === "" ||
+      //   carbohydrates_100g === "" ||
+      //   sugars_100g === "" ||
+      //   fat_100g === "" ||
+      //   saturated_fat_100g === "" ||
+      //   fiber_100g === "" ||
+      //   salt_100g === "" ||
+      //   category === ""
+      // ) {
+      //   alert("Please fill all the fields");
+      // return;
+      // } else {
+      setLoading(true);
+      const response = await axiosAuthInstanceToAPI.post("/product/", {
+        name: inputValue,
+        description: description,
+        image: image,
+        energy_100g: energy_100g,
+        proteins_100g: proteins_100g,
+        carbohydrates_100g: carbohydrates_100g,
+        sugars_100g: sugars_100g,
+        fat_100g: fat_100g,
+        saturated_fat_100g: saturated_fat_100g,
+        fiber_100g: fiber_100g,
+        salt_100g: salt_100g,
+        category: category,
+      });
+      setLoading(false);
+      if (response.status === 201) {
+        //return to home page
+        window.location.href = "/";
       } else {
-        setLoading(true);
-        const response = await axiosAuthInstanceToAPI.post("/product/", {
-          name: inputValue,
-          description: description,
-          image: image,
-          energy_100g: energy_100g,
-          proteins_100g: proteins_100g,
-          carbohydrates_100g: carbohydrates_100g,
-          sugars_100g: sugars_100g,
-          fat_100g: fat_100g,
-          saturated_fat_100g: saturated_fat_100g,
-          fiber_100g: fiber_100g,
-          salt_100g: salt_100g,
-          category: category,
-        });
-        setLoading(false);
-        if (response.status === 201) {
-          //return to home page
-          window.location.href = "/";
-        } else {
-          alert("error");
-        }
+        alert("error");
       }
     } catch (err) {
       console.error(err);
@@ -180,7 +181,7 @@ function AddFood() {
   if (loading === true)
     return (
       <div>
-        <h1>sekfherkfshsekfneskfnsekfnskengesjl</h1>
+        <h1>LOADING</h1>
       </div>
     );
   else
