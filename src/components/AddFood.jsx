@@ -251,9 +251,9 @@ function AddFood() {
                         className="block h-10 w-full px-4 py-3 placeholder-gray-400 border -gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600"
                       />
                     </div>
-                    <div>
+                    <div className="w-20, h-50">
                       {image !== "" && (
-                        <div className="mt-4 overflow-hidden rounded-lg aspect-w-1 aspect-h-1">
+                        <div className="mt-4 h-50 overflow-hidden rounded-lg aspect-w-1 aspect-h-1">
                           <img
                             className="object-cover w-full h-full"
                             src={image}
