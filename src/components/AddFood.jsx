@@ -11,7 +11,7 @@ import Loader from "./Loader";
 function AddFood() {
   const [dataProds, setDataProds] = useState(null);
   const [dataOptions, setDataOptions] = useState([]);
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState("Produs");
   const [image, setImage] = useState("");
   const [energy_100g, setEnergy_100g] = useState("0");
   const [proteins_100g, setProteins_100g] = useState("0");
@@ -145,7 +145,7 @@ function AddFood() {
       console.log(inputValue);
       const response = await axiosAuthInstanceToAPI.post("/product/", {
         name: name,
-        description: description,
+        description: "Produs",
         image: image,
         energy_100g: energy_100g,
         proteins_100g: proteins_100g,
@@ -250,6 +250,17 @@ function AddFood() {
                         value={image}
                         className="block h-10 w-full px-4 py-3 placeholder-gray-400 border -gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600"
                       />
+                    </div>
+                    <div>
+                      {image !== "" && (
+                        <div className="mt-4 overflow-hidden rounded-lg aspect-w-1 aspect-h-1">
+                          <img
+                            className="object-cover w-full h-full"
+                            src={image}
+                            alt=""
+                          />
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex items-center justify-center gap-3 mt-2">
