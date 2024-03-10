@@ -59,11 +59,13 @@ function FoodPage() {
 
   if (loading === true)
     return (
+      <div className="flex items-center justify-center h-screen">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
         viewBox="0 0 24 24"
+        className="w-20 h-20"
       >
         <circle cx="12" cy="3.5" r="1.5" fill="currentColor" opacity="0">
           <animateTransform
@@ -121,13 +123,16 @@ function FoodPage() {
           />
         </circle>
       </svg>
+      </div>
     );
   if (data === null)
     return (
-      <svg
+      <div className="flex items-center justify-center h-screen">
+        <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        className="w-20 h-20"
         viewBox="0 0 24 24"
       >
         <circle cx="12" cy="3.5" r="1.5" fill="currentColor" opacity="0">
@@ -186,6 +191,8 @@ function FoodPage() {
           />
         </circle>
       </svg>
+      </div>
+      
     );
   else
     return (
