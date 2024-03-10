@@ -45,13 +45,13 @@ function Login() {
             <div className="relative">
               <div className="w-full max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
                 <h3 className="text-4xl font-bold text-white">
-                  Join 35k+ web professionals &{" "}
+                  Find the food you love{" "}
                   <br className="hidden xl:block" />
-                  build your website
+                  and check it's nutrition score
                 </h3>
                 <ul className="grid grid-cols-1 mt-10 sm:grid-cols-2 gap-x-8 gap-y-4">
                   <li className="flex items-center space-x-3">
-                    <div className="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 bg-blue-500 rounded-full">
+                    <div className="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 bg-indigo-500 rounded-full">
                       <svg
                         className="w-3.5 h-3.5 text-white"
                         xmlns="http://www.w3.org/2000/svg"
@@ -67,11 +67,11 @@ function Login() {
                     </div>
                     <span className="text-lg font-medium text-white">
                       {" "}
-                      Commercial License{" "}
+                      Verfied Nutrition Data{" "}
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 bg-blue-500 rounded-full">
+                    <div className="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 bg-indigo-500 rounded-full">
                       <svg
                         className="w-3.5 h-3.5 text-white"
                         xmlns="http://www.w3.org/2000/svg"
@@ -87,11 +87,11 @@ function Login() {
                     </div>
                     <span className="text-lg font-medium text-white">
                       {" "}
-                      Unlimited Exports{" "}
+                      Real user reviews{" "}
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 bg-blue-500 rounded-full">
+                    <div className="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 bg-indigo-500 rounded-full">
                       <svg
                         className="w-3.5 h-3.5 text-white"
                         xmlns="http://www.w3.org/2000/svg"
@@ -107,11 +107,11 @@ function Login() {
                     </div>
                     <span className="text-lg font-medium text-white">
                       {" "}
-                      120+ Coded Blocks{" "}
+                      100% Free to use{" "}
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 bg-blue-500 rounded-full">
+                    <div className="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 bg-indigo-500 rounded-full">
                       <svg
                         className="w-3.5 h-3.5 text-white"
                         xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@ function Login() {
                     </div>
                     <span className="text-lg font-medium text-white">
                       {" "}
-                      Design Files Included{" "}
+                      Get started in seconds{" "}
                     </span>
                   </li>
                 </ul>
@@ -145,7 +145,7 @@ function Login() {
                 <a
                   href="/register"
                   title=""
-                  className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline"
+                  className="font-medium text-indigo-600 transition-all duration-200 hover:text-indigo-700 focus:text-indigo-700 hover:underline"
                 >
                   Create a free account
                 </a>
@@ -185,7 +185,7 @@ function Login() {
                         id="email"
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter email to get started"
-                        className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                        className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-indigo-600 focus:bg-white caret-indigo-600"
                       />
                     </div>
                   </div>
@@ -203,7 +203,7 @@ function Login() {
                       <a
                         href="#"
                         title=""
-                        className="text-sm font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline"
+                        className="text-sm font-medium text-indigo-600 transition-all duration-200 hover:text-indigo-700 focus:text-indigo-700 hover:underline"
                       >
                         {" "}
                         Forgot password?{" "}
@@ -233,7 +233,7 @@ function Login() {
                         name="password"
                         id="password"
                         placeholder="Enter your password"
-                        className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                        className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-indigo-600 focus:bg-white caret-indigo-600"
                       />
                     </div>
                   </div>
@@ -242,7 +242,7 @@ function Login() {
                     <button
                       onClick={handleSubmit}
                       type="submit"
-                      className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 border border-transparent rounded-md bg-gradient-to-r from-fuchsia-600 to-blue-600 focus:outline-none hover:opacity-80 focus:opacity-80"
+                      className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 border border-transparent rounded-md bg-gradient-to-r from-fuchsia-600 to-indigo-600 focus:outline-none hover:opacity-80 focus:opacity-80"
                     >
                       Log in
                     </button>
