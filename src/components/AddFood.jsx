@@ -12,19 +12,19 @@ function AddFood() {
   const [dataOptions, setDataOptions] = useState([]);
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  const [energy_100g, setEnergy_100g] = useState("");
-  const [proteins_100g, setProteins_100g] = useState("");
-  const [carbohydrates_100g, setCarbohydrates_100g] = useState("");
-  const [sugars_100g, setSugars_100g] = useState("");
-  const [fat_100g, setFat_100g] = useState("");
-  const [saturated_fat_100g, setSaturated_fat_100g] = useState("");
-  const [fiber_100g, setFiber_100g] = useState("");
-  const [salt_100g, setSalt_100g] = useState("");
+  const [energy_100g, setEnergy_100g] = useState("0");
+  const [proteins_100g, setProteins_100g] = useState("0");
+  const [carbohydrates_100g, setCarbohydrates_100g] = useState("0");
+  const [sugars_100g, setSugars_100g] = useState("0");
+  const [fat_100g, setFat_100g] = useState("0");
+  const [saturated_fat_100g, setSaturated_fat_100g] = useState("0");
+  const [fiber_100g, setFiber_100g] = useState("0");
+  const [salt_100g, setSalt_100g] = useState("0");
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const [name, setName] = useState("");
-  const [debouncedValue] = useDebounce(name, 1000);
+  // const [name, setName] = useState("");
+  // const [debouncedValue] = useDebounce(name, 1000);
   const [inputValue, setInputValue] = useState("");
 
   const populateNutriments = (selectedProduct) => {
@@ -125,7 +125,7 @@ function AddFood() {
   async function handleSubmit() {
     try {
       // if (
-      //   name === "" ||
+      //   inputValue === "" ||
       //   description === "" ||
       //   image === "" ||
       //   energy_100g === "" ||
@@ -138,10 +138,11 @@ function AddFood() {
       //   salt_100g === "" ||
       //   category === ""
       // ) {
-      //   alert("Please fill all the fields");
+      // alert("Please fill all the fields");
       // return;
       // } else {
       setLoading(true);
+      console.log(inputValue);
       const response = await axiosAuthInstanceToAPI.post("/product/", {
         name: inputValue,
         description: description,
@@ -164,6 +165,7 @@ function AddFood() {
         alert("error");
       }
     } catch (err) {
+      // }
       console.error(err);
       alert("error");
     }
@@ -205,6 +207,7 @@ function AddFood() {
                         loadOptions={loadOptions}
                         defaultOptions
                         styles={customStyles}
+                        value={inputValue}
                         onInputChange={setInputValue}
                         onChange={handleChange}
                         placeholder="Search for food..."
