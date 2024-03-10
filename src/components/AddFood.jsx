@@ -23,20 +23,20 @@ function AddFood() {
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // const [name, setName] = useState("");
+  const [name, setName] = useState("");
   // const [debouncedValue] = useDebounce(name, 1000);
   const [inputValue, setInputValue] = useState("");
 
   const populateNutriments = (selectedProduct) => {
-    setEnergy_100g(selectedProduct.energy_100g);
-    setProteins_100g(selectedProduct.proteins_100g);
-    setCarbohydrates_100g(selectedProduct.carbohydrates_100g);
-    setSugars_100g(selectedProduct.sugars_100g);
-    setFat_100g(selectedProduct.fat_100g);
-    setSalt_100g(selectedProduct.salt_100g);
-    setSaturated_fat_100g(selectedProduct.saturated_fat_100g);
-    setFiber_100g(selectedProduct.fiber_100g);
-    setImage(selectedProduct.image);
+    setEnergy_100g(selectedProduct?.energy_100g);
+    setProteins_100g(selectedProduct?.proteins_100g);
+    setCarbohydrates_100g(selectedProduct?.carbohydrates_100g);
+    setSugars_100g(selectedProduct?.sugars_100g);
+    setFat_100g(selectedProduct?.fat_100g);
+    setSalt_100g(selectedProduct?.salt_100g);
+    setSaturated_fat_100g(selectedProduct?.saturated_fat_100g);
+    setFiber_100g(selectedProduct?.fiber_100g);
+    setImage(selectedProduct?.image);
   };
 
   const handleChange = (selectedOption) => {
@@ -44,6 +44,7 @@ function AddFood() {
     const selectedProduct = dataProds.filter(
       (item) => item.id === selectedOption.value
     )[0];
+    setName(selectedProduct.label);
     populateNutriments(selectedProduct);
     // Aici poți seta starea bazată pe opțiunea selectată sau face alte acțiuni
   };
@@ -75,14 +76,12 @@ function AddFood() {
           };
         })
       );
-
       return response.data.products.map((product) => ({
         label: product.product_name,
         value: product.id,
       }));
     } catch (error) {
       console.error("Error loading options:", error);
-      return [];
     }
   };
 
@@ -144,7 +143,7 @@ function AddFood() {
       setLoading(true);
       console.log(inputValue);
       const response = await axiosAuthInstanceToAPI.post("/product/", {
-        name: inputValue,
+        name: name,
         description: description,
         image: image,
         energy_100g: energy_100g,
@@ -207,7 +206,6 @@ function AddFood() {
                         loadOptions={loadOptions}
                         defaultOptions
                         styles={customStyles}
-                        value={inputValue}
                         onInputChange={setInputValue}
                         onChange={handleChange}
                         placeholder="Search for food..."
