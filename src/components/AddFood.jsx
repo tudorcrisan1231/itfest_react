@@ -6,6 +6,7 @@ import { useDebounce } from "use-debounce";
 import { Autocomplete, selectClasses } from "@mui/material";
 import { TextField } from "@mui/material";
 import AsyncSelect from "react-select/async";
+import Loader from "./Loader";
 
 function AddFood() {
   const [dataProds, setDataProds] = useState(null);
@@ -179,12 +180,7 @@ function AddFood() {
       width: "100%", // Asigură că controlul (partea vizibilă a selectului) va avea și el 100% lățime
     }),
   };
-  if (loading === true)
-    return (
-      <div>
-        <h1>LOADING</h1>
-      </div>
-    );
+  if (loading === true) return <Loader />;
   else
     return (
       <>
